@@ -1,0 +1,14 @@
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\bin\Debug\net10.0\GamePredictor.Domain.deps.json
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\bin\Debug\net10.0\GamePredictor.Domain.runtimeconfig.json
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\bin\Debug\net10.0\GamePredictor.Domain.dll
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\bin\Debug\net10.0\GamePredictor.Domain.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.csproj.AssemblyReference.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.AssemblyInfoInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.AssemblyInfo.cs
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.dll
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\refint\GamePredictor.Domain.dll
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\GamePredictor.Domain.genruntimeconfig.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Domain\obj\Debug\net10.0\ref\GamePredictor.Domain.dll

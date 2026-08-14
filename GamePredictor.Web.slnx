@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GamePredictor.Application/GamePredictor.Application.csproj" />
+  <Project Path="GamePredictor.Domain/GamePredictor.Domain.csproj" />
+  <Project Path="GamePredictor.Infrastructure/GamePredictor.Infrastructure.csproj" />
+  <Project Path="GamePredictor.Web/GamePredictor.Web.csproj" />
+</Solution>
