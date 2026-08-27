@@ -2655,11 +2655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
       "projectName": "GamePredictor.Domain",
-      "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
+      "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
       "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,71 @@
+﻿@page
+@model GamePredictor.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = "Ближайшие релизы";
+}
+
+<h1 class="mb-4">🎮 Ближайшие релизы игр</h1>
+
+@if (Model.Games.Any())
+{
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Название</th>
+                <th>Разработчик</th>
+                <th>Дата релиза</th>
+                <th>Прогноз</th>
+                <th>Уверенность</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model.Games)
+            {
+                <tr>
+                    <td>@game.Title</td>
+                    <td>@game.DeveloperName</td>
+                    <td>@game.ReleaseDate?.ToString("dd MMM yyyy")</td>
+                    <td>
+                        @if (game.PredictedScore.HasValue)
+                        {
+                            <span class="badge bg-primary fs-6">@game.PredictedScore.Value.ToString("F0")</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                    </td>
+                    <td>
+                        @if (game.Confidence.HasValue)
+                        {
+                            var percent = (game.Confidence.Value * 100).ToString("F0");
+                            var color = game.Confidence.Value > 0.7 ? "success" : game.Confidence.Value > 0.4 ? "warning" : "danger";
+                            <div class="progress" style="width: 100px;">
+                                <div class="progress-bar bg-@color" role="progressbar" style="width: @percent%;" aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="100">@percent%</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                    </td>
+                    <td>
+                        <a href="/Details/@game.Id" class="btn btn-sm btn-outline-primary">Подробнее</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <strong>Нет предстоящих игр.</strong> 
+        Чтобы загрузить данные, выполните POST-запрос к <code>/api/Admin/update</code> через Swagger или нажмите кнопку ниже.
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-primary">Обновить данные</button>
+        </form>
+    </div>
+}

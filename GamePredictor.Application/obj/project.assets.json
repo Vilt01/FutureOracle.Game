@@ -720,11 +720,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Application\\GamePredictor.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Application\\GamePredictor.Application.csproj",
       "projectName": "GamePredictor.Application",
-      "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Application\\GamePredictor.Application.csproj",
+      "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Application\\GamePredictor.Application.csproj",
       "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Application\\obj\\",
+      "outputPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -747,8 +747,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\GamePredictor.Domain.csproj": {
-              "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\GamePredictor.Domain.csproj"
+            "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\GamePredictor.Domain.csproj": {
+              "projectPath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\GamePredictor.Domain.csproj"
             }
           }
         }

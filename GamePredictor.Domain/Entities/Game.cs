@@ -5,6 +5,7 @@ namespace GamePredictor.Domain.Entities;
 
 public partial class Game
 {
+    public int? RawgId { get; set; } // null, если игра не из RAWG
     public int Id { get; set; }
 
     public string Title { get; set; } = null!;
@@ -27,11 +28,11 @@ public partial class Game
 
     public int DeveloperId { get; set; }
 
-    public virtual Developer Developer { get; set; } = null!;
+    public virtual Developers Developer { get; set; } = null!;
 
     public virtual ICollection<NewsSentiment> NewsSentiments { get; set; } = new List<NewsSentiment>();
 
-    public virtual ICollection<PreRelelaseMetric> PreRelelaseMetrics { get; set; } = new List<PreRelelaseMetric>();
+    public virtual ICollection<PreReleaseMetrics> PreReleaseMetrics { get; set; } = new List<PreReleaseMetrics>();
 
-    public virtual ICollection<Prediction> Predictions { get; set; } = new List<Prediction>();
+    public virtual ICollection<Predictions> Predictions { get; set; } = new List<Predictions>();
 }

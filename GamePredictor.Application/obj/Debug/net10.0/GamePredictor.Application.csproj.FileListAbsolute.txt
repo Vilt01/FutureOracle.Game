@@ -8,8 +8,25 @@ C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.AssemblyInfoInputs.cache
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.AssemblyInfo.cs
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.csproj.CoreCompileInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.sourcelink.json
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePred.3608F38F.Up2Date
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.dll
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\refint\GamePredictor.Application.dll
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.pdb
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Application\obj\Debug\net10.0\ref\GamePredictor.Application.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\bin\Debug\net10.0\GamePredictor.Application.deps.json
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\bin\Debug\net10.0\GamePredictor.Application.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\bin\Debug\net10.0\GamePredictor.Application.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\bin\Debug\net10.0\GamePredictor.Domain.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\bin\Debug\net10.0\GamePredictor.Domain.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.csproj.AssemblyReference.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.AssemblyInfoInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.AssemblyInfo.cs
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.csproj.CoreCompileInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.sourcelink.json
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePred.3608F38F.Up2Date
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\refint\GamePredictor.Application.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\GamePredictor.Application.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Application\obj\Debug\net10.0\ref\GamePredictor.Application.dll

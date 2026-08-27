@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "12uggu5R8Po=",
+  "dgSpecHash": "O4d3e8ORbQg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Domain\\GamePredictor.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Danil\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Danil\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",

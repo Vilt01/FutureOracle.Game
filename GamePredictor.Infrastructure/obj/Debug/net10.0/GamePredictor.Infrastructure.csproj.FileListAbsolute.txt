@@ -10,8 +10,27 @@ C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.AssemblyInfo.cs
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.sourcelink.json
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePred.1B6301B6.Up2Date
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.dll
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\refint\GamePredictor.Infrastructure.dll
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.pdb
 C:\Users\Danil\Desktop\GamePredictor.Web\GamePredictor.Infrastructure\obj\Debug\net10.0\ref\GamePredictor.Infrastructure.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Infrastructure.deps.json
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Infrastructure.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Infrastructure.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Application.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Domain.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Application.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\bin\Debug\net10.0\GamePredictor.Domain.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.AssemblyInfo.cs
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.sourcelink.json
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePred.1B6301B6.Up2Date
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\refint\GamePredictor.Infrastructure.dll
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\GamePredictor.Infrastructure.pdb
+C:\Users\Danil\Desktop\GamePredictor.Web — копия\GamePredictor.Infrastructure\obj\Debug\net10.0\ref\GamePredictor.Infrastructure.dll

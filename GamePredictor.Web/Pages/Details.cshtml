@@ -1,0 +1,66 @@
+﻿@page "{id:int}"
+@model GamePredictor.Web.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Прогноз игры";
+}
+
+<h1 class="mb-4">🎯 Прогноз для @Model.GameTitle</h1>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<div class="card">
+    <div class="card-body">
+        @if (Model.Prediction != null)
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Прогнозируемый рейтинг</h5>
+                    <div class="display-1 text-primary">@Model.Prediction.PredictedScore.ToString("F0")</div>
+                    <div class="mt-3">
+                        <span class="badge bg-@(Model.Prediction.RiskLevel == "Low" ? "success" : Model.Prediction.RiskLevel == "Medium" ? "warning" : "danger") fs-5">
+                            Риск: @Model.Prediction.RiskLevel
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Класс продаж</h5>
+                    <div class="display-4">@Model.Prediction.SalesClass</div>
+                    <div class="mt-3">
+                        <span class="badge bg-secondary fs-5">Уверенность: @(Model.Prediction.Confidence.ToString("P0"))</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <h5>📊 Аргументы</h5>
+            <p class="lead">@Model.Prediction.Arguments</p>
+        }
+        else
+        {
+            <div class="alert alert-warning">Прогноз временно недоступен. Пожалуйста, попробуйте позже.</div>
+        }
+
+        <h5>📰 Использованные данные</h5>
+        <table class="table table-sm">
+            <tr><td><strong>Разработчик</strong></td><td>@Model.DeveloperName</td></tr>
+            <tr><td><strong>Жанр</strong></td><td>@Model.Genre</td></tr>
+            <tr><td><strong>Дата релиза</strong></td><td>@Model.ReleaseDate?.ToString("dd MMM yyyy")</td></tr>
+            @if (Model.WishlistCount.HasValue)
+            {
+                <tr><td><strong>Wishlist (Steam)</strong></td><td>@Model.WishlistCount.Value</td></tr>
+            }
+            @if (Model.YoutubeViews.HasValue)
+            {
+                <tr><td><strong>Просмотры трейлера (YouTube)</strong></td><td>@Model.YoutubeViews.Value</td></tr>
+            }
+            <tr><td><strong>Количество новостей за 60 дней</strong></td><td>@Model.NewsCount</td></tr>
+            <tr><td><strong>Средний сентимент новостей</strong></td><td>@(Model.AvgSentiment?.ToString("F2") ?? "нет данных")</td></tr>
+        </table>
+
+        <a href="/" class="btn btn-secondary">← Назад к списку</a>
+    </div>
+</div>

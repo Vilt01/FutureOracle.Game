@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GamePredictor.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5974f232dd5cba509b922f458903cce20f53b39")]
 [assembly: System.Reflection.AssemblyProductAttribute("GamePredictor.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GamePredictor.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

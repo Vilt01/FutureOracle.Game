@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TR9ecozl4ak=",
+  "dgSpecHash": "8YimgR1WL2U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web\\GamePredictor.Application\\GamePredictor.Application.csproj",
+  "projectFilePath": "C:\\Users\\Danil\\Desktop\\GamePredictor.Web — копия\\GamePredictor.Application\\GamePredictor.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Danil\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.4\\microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
     "C:\\Users\\Danil\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.4\\microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",
