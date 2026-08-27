@@ -45,7 +45,6 @@ public class DeveloperRepository : IDeveloperRepository
     public async Task UpdateAsync(Developers developer)
     {
         _dbSet.Update(developer);
-        // ⚠️ НЕ ВЫЗЫВАЕМ SaveChangesAsync здесь – это делает вызывающий код
     }
 
     public async Task<bool> SaveChangesAsync()
