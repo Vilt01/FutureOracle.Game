@@ -14,24 +14,22 @@ using Polly.Extensions.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Настройка Options
 builder.Services.Configure<RawgOptions>(builder.Configuration.GetSection("RAWG"));
 builder.Services.Configure<YoutubeOptions>(builder.Configuration.GetSection("Youtube"));
 builder.Services.Configure<HuggingFaceOptions>(builder.Configuration.GetSection("HuggingFace"));
 builder.Services.Configure<PredictionOptions>(builder.Configuration.GetSection("Prediction"));
 
-// 2. DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
-// 3. Репозитории
+// Репозитории
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<IPredictionRepository, PredictionRepository>();
 builder.Services.AddScoped<IMetricRepository, MetricRepository>();
 builder.Services.AddScoped<INewsRepository, NewsRepository>();
 builder.Services.AddScoped<IDeveloperRepository, DeveloperRepository>();
 
-// 4. Клиенты внешних API
+// Клиенты внешних API
 builder.Services.AddHttpClient<RawgClient>(client =>
 {
     client.Timeout = TimeSpan.FromSeconds(60);
@@ -72,12 +70,12 @@ builder.Services.AddHttpClient<RssNewsClient>(client =>
 });
 builder.Services.AddScoped<INewsApiClient, RssNewsClient>();
 
-// 5. Сервисы бизнес-логики
+// Сервисы бизнес-логики
 builder.Services.AddScoped<IGenreStatsService, GenreStatsService>();
 builder.Services.AddScoped<IPredictionService, PredictionService>();
 builder.Services.AddScoped<IDataUpdateService, DataUpdateService>();
 
-// 6. Фоновый сервис
+// Фоновый сервис
 builder.Services.AddHostedService<DataUpdateWorker>();
 
 // 7. Контроллеры, Swagger и Razor Pages
@@ -88,7 +86,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 8. Инициализация БД: только Unknown
+// Инициализация БД: только Unknown
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -104,7 +102,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// 9. Middleware
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
