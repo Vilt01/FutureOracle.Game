@@ -55,7 +55,7 @@ public class RawgClient : IGameSourceClient
                 MetacriticScore = dto.Metacritic,
                 SteamAppId = null,
                 TrailerYoutubeId = null,
-                DeveloperId = 1 // временно, будет заменено
+                DeveloperId = 1
             }).ToList();
 
             _logger.LogInformation("Получено {Count} игр из RAWG", games.Count);
@@ -84,7 +84,6 @@ public class RawgClient : IGameSourceClient
             var dto = JsonSerializer.Deserialize<RawgGameDetailsDto>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             if (dto == null) return null;
 
-            // Обработка разработчиков: если пусто – добавляем Unknown
             var developers = dto.Developers?.Select(d => new DeveloperInfo { Id = d.Id, Name = d.Name }).ToList();
             if (developers == null || developers.Count == 0)
             {
@@ -165,7 +164,6 @@ public class RawgClient : IGameSourceClient
         }
     }
 
-    // Внутренние классы для десериализации
     private class RawgResponse
     {
         public List<RawgGameDto> Results { get; set; } = new();
