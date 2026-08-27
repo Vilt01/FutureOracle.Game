@@ -47,7 +47,7 @@ public class GameRepository : RepositoryBase<Game>, IGameRepository
             dev = new Developers
             {
                 Name = name,
-                AvgMetacriticLast3 = 70, // дефолтное значение для новых студий
+                AvgMetacriticLast3 = 70,
                 GamesCount = 0
             };
             _context.Developers.Add(dev);
