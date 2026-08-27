@@ -8,6 +8,5 @@ public interface IMetricRepository
     void Add(PreReleaseMetrics metric);
     Task<bool> SaveChangesAsync();
 
-    // НОВЫЙ МЕТОД (добавьте в конец)
     Task<double> GetMedianWishlistForGenreAsync(string genre);
 }
