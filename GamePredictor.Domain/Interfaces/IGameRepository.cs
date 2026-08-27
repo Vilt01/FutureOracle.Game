@@ -12,5 +12,5 @@ public interface IGameRepository
     Task<double> GetGenreAverageAsync(string genre);
     Task<Game?> GetByRawgIdAsync(int rawgId);
     Task<Developers> GetOrCreateDeveloperAsync(string name);
-    Task<Developers?> GetDeveloperByIdAsync(int id); // новый метод
+    Task<Developers?> GetDeveloperByIdAsync(int id);
 }
