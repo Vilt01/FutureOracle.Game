@@ -33,7 +33,6 @@ public class DataUpdateWorker : BackgroundService
     {
         try
         {
-            // ✅ СОЗДАЁМ НОВЫЙ SCOPE ДЛЯ КАЖДОЙ ОПЕРАЦИИ
             using var scope = _scopeFactory.CreateScope();
             var dataUpdateService = scope.ServiceProvider.GetRequiredService<IDataUpdateService>();
             var result = await dataUpdateService.UpdateAllDataAsync();
