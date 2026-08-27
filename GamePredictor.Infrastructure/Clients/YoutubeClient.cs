@@ -47,7 +47,6 @@ public class YoutubeClient : IYoutubeClient
         }
     }
 
-    // Поиск ID трейлера по названию игры через YouTube Search API
     public async Task<string?> FindTrailerIdAsync(string gameName)
     {
         try
