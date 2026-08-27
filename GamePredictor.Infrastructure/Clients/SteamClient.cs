@@ -18,7 +18,6 @@ public class SteamClient : ISteamClient
 
     public async Task<int> GetWishlistCountAsync(int appId)
     {
-        // 1. Пробуем Steam Spy с повторными попытками
         for (int attempt = 1; attempt <= 3; attempt++)
         {
             try
@@ -32,7 +31,7 @@ public class SteamClient : ISteamClient
                     _logger.LogInformation("Wishlist для appId {AppId}: {Wishlist} (Steam Spy)", appId, data.Wishlist);
                     return data.Wishlist;
                 }
-                break; // если вернулся 0, не повторяем
+                break; 
             }
             catch (Exception ex)
             {
@@ -42,7 +41,6 @@ public class SteamClient : ISteamClient
             }
         }
 
-        // 2. Резерв: парсинг SteamDB (одна попытка)
         try
         {
             var url = $"https://steamdb.info/app/{appId}/";
@@ -64,7 +62,6 @@ public class SteamClient : ISteamClient
             _logger.LogWarning(ex, "Ошибка парсинга SteamDB для appId {AppId}", appId);
         }
 
-        // 3. Если всё не удалось – возвращаем 0
         _logger.LogWarning("Не удалось получить wishlist для appId {AppId}, возвращаем 0", appId);
         return 0;
     }
