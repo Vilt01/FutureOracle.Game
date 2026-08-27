@@ -5,7 +5,7 @@ namespace GamePredictor.Domain.Entities;
 
 public partial class Game
 {
-    public int? RawgId { get; set; } // null, если игра не из RAWG
+    public int? RawgId { get; set; }
     public int Id { get; set; }
 
     public string Title { get; set; } = null!;
