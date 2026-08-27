@@ -105,3 +105,119 @@
    ```bash
    git clone https://github.com/Vilt01/FutureOracle.Game.git
    cd FutureOracle.Game
+   ```
+
+2. **Установить PostgreSQL** (если ещё нет) и создать базу данных с именем `postgres` (или изменить строку подключения в `appsettings.json`).
+
+3. **Настроить ключи API**  
+   В файле `GamePredictor.Web/appsettings.json` замени заглушки на свои ключи:
+   - `RAWG:ApiKey` – получить на [rawg.io](https://rawg.io/apidocs)
+   - `Youtube:ApiKey` – получить в Google Cloud Console
+   - (опционально) `HuggingFace:ApiKey` – получить на [huggingface.co](https://huggingface.co/settings/tokens)
+
+4. **Восстановить пакеты и собрать**
+   ```bash
+   dotnet restore
+   dotnet build
+   ```
+
+5. **Применить миграции БД**
+   ```bash
+   dotnet ef database update --project GamePredictor.Infrastructure --startup-project GamePredictor.Web
+   ```
+
+6. **Запустить приложение**
+   ```bash
+   dotnet run --project GamePredictor.Web
+   ```
+
+7. Открыть браузер по адресу `https://localhost:7149` (или порт из вывода консоли).
+
+---
+
+## 📸 Скриншоты
+
+### 1. Главная страница (список игр)
+![Главная страница](Screenshots/main-page.png)
+
+### 2. Карточка прогноза
+![Карточка прогноза](Screenshots/details.png)
+
+### 3. Схема базы данных
+![Схема БД](Screenshots/db-schema.png)
+
+---
+
+## 🗄 Структура базы данных
+
+Схема базы данных описана в файле [Database/schema.sql](Database/schema.sql).
+
+**Основные таблицы:**
+
+- **Game** – информация об играх (название, жанр, дата релиза, разработчик, Steam App ID, YouTube ID)
+- **Developers** – разработчики (средний балл за последние 3 игры, количество игр)
+- **PreReleaseMetrics** – метрики популярности (Wishlist, просмотры на YouTube, упоминания в Reddit)
+- **NewsSentiment** – новости и их сентимент-анализ
+- **Predictions** – сохранённые прогнозы с уверенностью, риском и аргументами
+
+---
+
+## 🧪 Как проверить работу
+
+1. На главной странице отобразится список предстоящих игр.
+2. Нажми «Подробнее» у любой игры – откроется карточка с прогнозом.
+3. Если данные ещё не загружены, нажми кнопку «Обновить данные» (или вызови POST `/api/admin/update` через Swagger).
+4. После обновления появятся Wishlist, просмотры и новости, и прогноз пересчитается.
+
+---
+
+## 🔍 Что использовано из AI
+
+- **Сентимент-анализ** – Hugging Face DistilBERT (бесплатный API) для оценки тональности новостей.
+- **Поиск YouTube ID** – YouTube Data API v3 (использует AI для поиска релевантных видео).
+
+---
+
+## 📁 Структура репозитория
+
+```
+FutureOracle.Game/
+├── GamePredictor.Application/       # бизнес-логика, DTO, интерфейсы
+├── GamePredictor.Domain/            # сущности, интерфейсы репозиториев
+├── GamePredictor.Infrastructure/    # клиенты API, репозитории, миграции
+├── GamePredictor.Web/               # Razor Pages, Controllers, Program.cs
+├── Screenshots/                     # скриншоты для README
+│   ├── main-page.png
+│   ├── details.png
+│   └── db-schema.png
+├── Database/                        # SQL-схема
+│   └── schema.sql
+├── .gitignore
+├── GamePredictor.Web.slnx
+└── README.md
+```
+
+---
+
+## 📝 Итоговые комментарии
+
+Проект демонстрирует:
+
+- Работу с внешними API и агрегацию данных из нескольких источников.
+- Построение прогностической модели с весами и объяснимыми аргументами.
+- Чистую архитектуру, DI, репозитории, фоновые задачи.
+- Честное отображение уверенности и риска на основе полноты данных.
+
+**Задание сдано.**
+```
+
+---
+
+## Что делать
+
+1. Скопируй весь этот текст.
+2. Открой файл `README.md` в корне репозитория на GitHub (нажми на него, потом на карандашик Edit).
+3. Вставь этот текст вместо старого.
+4. Внизу напиши `update README` и нажми **"Commit changes"**.
+
+**Всё, репозиторий полностью готов к сдаче!** 🚀
