@@ -17,7 +17,6 @@ public class MetricRepository : RepositoryBase<PreReleaseMetrics>, IMetricReposi
             .FirstOrDefaultAsync();
     }
 
-    // Реализация нового метода
     public async Task<double> GetMedianWishlistForGenreAsync(string genre)
     {
         var metrics = await _context.PreReleaseMetrics
@@ -27,7 +26,7 @@ public class MetricRepository : RepositoryBase<PreReleaseMetrics>, IMetricReposi
             .ToListAsync();
 
         if (!metrics.Any())
-            return 50000.0; // значение по умолчанию
+            return 50000.0;
 
         int count = metrics.Count;
         if (count % 2 == 1)
