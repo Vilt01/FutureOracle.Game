@@ -15,7 +15,7 @@ public class PredictionService : IPredictionService
     private readonly IPredictionRepository _predictionRepository;
     private readonly IMetricRepository _metricRepository;
     private readonly INewsRepository _newsRepository;
-    private readonly IGenreStatsService _genreStatsService; // новый сервис
+    private readonly IGenreStatsService _genreStatsService;
     private readonly PredictionOptions _predictionOptions;
     private readonly ILogger<PredictionService> _logger;
 
@@ -24,7 +24,7 @@ public class PredictionService : IPredictionService
         IPredictionRepository predictionRepository,
         IMetricRepository metricRepository,
         INewsRepository newsRepository,
-        IGenreStatsService genreStatsService, // добавлен
+        IGenreStatsService genreStatsService,
         IOptions<PredictionOptions> options,
         ILogger<PredictionService> logger)
     {
