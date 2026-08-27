@@ -7,17 +7,16 @@ public interface IGameSourceClient
 {
     Task<IEnumerable<Game>> GetUpcomingGamesAsync(DateTime fromDate, int daysAhead = 90);
     Task<GameDetailsDto?> GetGameDetailsAsync(int rawgId);
-    Task<IEnumerable<DeveloperGameStatsDto>> GetGamesForDeveloperAsync(string developerName, int limit = 3); // новый метод
+    Task<IEnumerable<DeveloperGameStatsDto>> GetGamesForDeveloperAsync(string developerName, int limit = 3);
 }
 
-// DTO для деталей игры
 public class GameDetailsDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public List<DeveloperInfo> Developers { get; set; } = new();
     public List<StoreInfo> Stores { get; set; } = new();
-    public ClipInfo? Clip { get; set; } // 👈 добавлено свойство Clip
+    public ClipInfo? Clip { get; set; }
 }
 
 public class DeveloperInfo
@@ -28,7 +27,7 @@ public class DeveloperInfo
 
 public class StoreInfo
 {
-    public StoreDetail? Store { get; set; } // 👈 свойство Store
+    public StoreDetail? Store { get; set; }
     public string Url { get; set; } = string.Empty;
 }
 
