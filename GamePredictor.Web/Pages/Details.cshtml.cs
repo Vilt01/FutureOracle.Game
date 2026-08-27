@@ -43,7 +43,6 @@ public class DetailsModel : PageModel
     {
         _logger.LogInformation("Вызван OnGetAsync с id = {Id}", id);
 
-        // 1. Получаем прогноз (если получится)
         try
         {
             Prediction = await _predictionService.PredictGameAsync(id);
@@ -54,7 +53,6 @@ public class DetailsModel : PageModel
             _logger.LogError(ex, "Ошибка при получении прогноза для id {Id}", id);
         }
 
-        // 2. Получаем игру
         var game = await _gameRepository.GetByIdAsync(id);
         if (game == null)
         {
@@ -67,12 +65,10 @@ public class DetailsModel : PageModel
         Genre = game.Genre;
         ReleaseDate = game.Releasedate;
 
-        // 3. Получаем метрики
         var metrics = await _metricRepository.GetLatestForGameAsync(id);
         WishlistCount = metrics?.WishlistCount;
         YoutubeViews = metrics?.YoutubeTrailerViews;
 
-        // 4. Получаем новости
         var news = await _newsRepository.GetForGameAsync(id, 60);
         NewsCount = news.Count();
         AvgSentiment = news.Any()
