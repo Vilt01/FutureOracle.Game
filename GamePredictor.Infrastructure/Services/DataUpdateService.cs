@@ -52,12 +52,10 @@ public class DataUpdateService : IDataUpdateService
         int gamesLoaded = 0, predictionsCount = 0;
         var developersToUpdate = new List<(int Id, string Name)>();
 
-        // 1. Загружаем игры из RAWG
         var games = await _gameSourceClient.GetUpcomingGamesAsync(DateTime.UtcNow, 90);
         gamesLoaded = games.Count();
         _logger.LogInformation("Получено {Count} игр из RAWG", gamesLoaded);
 
-        // 2. Сохраняем игры и собираем разработчиков для обновления
         foreach (var game in games)
         {
             if (!game.RawgId.HasValue) continue;
@@ -65,7 +63,6 @@ public class DataUpdateService : IDataUpdateService
             var details = await _gameSourceClient.GetGameDetailsAsync(game.RawgId.Value);
             if (details == null) continue;
 
-            // --- Разработчик ---
             if (details.Developers != null && details.Developers.Any())
             {
                 var devName = details.Developers.First().Name;
@@ -83,7 +80,6 @@ public class DataUpdateService : IDataUpdateService
                 game.DeveloperId = unknownDev.Id;
             }
 
-            // --- Steam App ID (сначала из RAWG) ---
             if (details.Stores != null)
             {
                 foreach (var storeInfo in details.Stores)
@@ -101,7 +97,6 @@ public class DataUpdateService : IDataUpdateService
                 }
             }
 
-            // --- Если не нашли, ищем по названию через Steam API ---
             if (!game.SteamAppId.HasValue)
             {
                 var foundAppId = await _steamClient.FindAppIdByNameAsync(game.Title);
@@ -112,7 +107,6 @@ public class DataUpdateService : IDataUpdateService
                 }
             }
 
-            // --- YouTube трейлер (сначала из RAWG) ---
             if (details.Clip != null && !string.IsNullOrEmpty(details.Clip.Url))
             {
                 var vidMatch = Regex.Match(details.Clip.Url, @"(?:v=|youtu\.be/)([^&?]+)");
@@ -123,7 +117,6 @@ public class DataUpdateService : IDataUpdateService
                 }
             }
 
-            // --- Если не нашли, ищем по названию через YouTube Search API ---
             if (string.IsNullOrEmpty(game.TrailerYoutubeId))
             {
                 var foundVideoId = await _youtubeClient.FindTrailerIdAsync(game.Title);
@@ -134,7 +127,6 @@ public class DataUpdateService : IDataUpdateService
                 }
             }
 
-            // --- Сохраняем или обновляем игру (с защитой от затирания) ---
             var existing = await _gameRepository.GetByRawgIdAsync(game.RawgId.Value);
             if (existing == null)
             {
@@ -142,7 +134,6 @@ public class DataUpdateService : IDataUpdateService
             }
             else
             {
-                // Обновляем только те поля, которые гарантированно есть
                 existing.Title = game.Title;
                 existing.Genre = game.Genre;
                 existing.Releasedate = game.Releasedate;
@@ -152,7 +143,6 @@ public class DataUpdateService : IDataUpdateService
                 existing.MetacriticScore = game.MetacriticScore;
                 existing.IsReleased = game.IsReleased;
 
-                // ⚠️ Не затираем существующие значения, если новые не найдены
                 if (game.SteamAppId.HasValue)
                     existing.SteamAppId = game.SteamAppId.Value;
 
@@ -163,16 +153,13 @@ public class DataUpdateService : IDataUpdateService
             }
         }
 
-        // Сохраняем игры (один раз)
         await _gameRepository.SaveChangesAsync();
 
-        // Обновляем разработчиков последовательно
         foreach (var (devId, devName) in developersToUpdate)
         {
             await UpdateDeveloperAverageAsync(devId, devName);
         }
 
-        // 3. Собираем метрики, новости и делаем прогноз для каждой игры
         var savedGames = await _gameRepository.GetUpcomingAsync(DateTime.UtcNow, DateTime.UtcNow.AddDays(90));
         _logger.LogInformation("Обработка {Count} сохранённых игр", savedGames.Count());
 
@@ -196,7 +183,6 @@ public class DataUpdateService : IDataUpdateService
         return (gamesLoaded, predictionsCount);
     }
 
-    // ===== ИСПРАВЛЕННЫЙ МЕТОД: НЕ СОЗДАЁМ МЕТРИКИ С НУЛЯМИ, ЕСЛИ УЖЕ ЕСТЬ ХОРОШИЕ ДАННЫЕ =====
     private async Task UpdateMetricsForGameAsync(Game game)
     {
         int wishlist = 0;
@@ -237,8 +223,6 @@ public class DataUpdateService : IDataUpdateService
         bool hasPreviousNonZero = previousMetric != null &&
                                   (previousMetric.WishlistCount > 0 || previousMetric.YoutubeTrailerViews > 0);
 
-        // Создаём запись, только если получили реальные данные (wishlist > 0 или views > 0)
-        // или если предыдущей хорошей записи нет (чтобы создать первую)
         if ((gotWishlist && wishlist > 0) || (gotViews && views > 0) || !hasPreviousNonZero)
         {
             var metric = new PreReleaseMetrics
@@ -259,7 +243,6 @@ public class DataUpdateService : IDataUpdateService
         }
     }
 
-    // Остальные методы без изменений
     private async Task UpdateNewsForGameAsync(Game game)
     {
         var existingNews = await _newsRepository.GetForGameAsync(game.Id, 3);
